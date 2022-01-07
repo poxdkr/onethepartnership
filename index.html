@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>당신의 비지니스파트너! [ OneThePartnerShip ]</title>
+    
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/5fcda0f61e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href='./style.css' type='text/css'>
+    <link rel="shortcut icon" href="icon/wonderLogoSmall.png">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@200&family=Licorice&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    <script>
+
+       
+
+        function moveTo(id){
+            document.querySelector("#"+id).scrollIntoView({behavior:'smooth'});
+        }
+        
+        $(function(){
+            //nav_short Click
+            $(".nav_short").click(function(){
+                var shortStatus = $(".nav_short").css("display");
+                var centerStatus = $(".nav_center").css("display");
+                console.log(shortStatus);
+                if(shortStatus == "block" && centerStatus=="none"){
+                    $(".nav_center").css("display","flex");
+                    $(".nav_right").css("display","flex");
+                }else{
+                    $(".nav_center").css("display","none");
+                    $(".nav_right").css("display","none");
+                }
+            });
+            //TopBtn Click
+            $("#topBtn").click(function(){
+                window.scrollTo({top:0, left:0, behavior:'auto'});
+            });
+            //KaKaoBtn Click
+            $("#kakaoChatBtn").click(function(){
+                location.href="https://pf.kakao.com/_fxmixjb/chat";
+            });
+
+            //scrollAnimate Funtion
+            function scrollOpacity(id ,scrollPoint, windowPoint){
+                if(scrollPoint > windowPoint){
+                    $("#"+id).animate({
+                        opacity: '100%'
+                        },1000);
+                    $("."+id).animate({
+                    opacity: '100%'
+                    },1000);
+                    }
+                }
+
+            //scroll Event
+            $(window).scroll(function(){
+                
+                let scrollPoint = window.scrollY;
+                console.log("scroll:"+scrollPoint);
+                console.log("windowWidth:"+window.innerWidth);
+
+                //on mobile(less than 480px)
+
+                if(window.innerWidth<=480){
+                scrollOpacity("greeting1 video",scrollPoint,200);
+                scrollOpacity("greetingText",scrollPoint,300);
+                scrollOpacity("businessTitle",scrollPoint,300);
+                scrollOpacity("business",scrollPoint,900);
+                scrollOpacity("prodDesc",scrollPoint,2000);
+                scrollOpacity("engContact",scrollPoint,2800);
+                scrollOpacity("contactUs",scrollPoint,2850);
+                }else{ //on Pc and Others(more than 480px)
+                scrollOpacity("greeting1 video",scrollPoint,350);
+                scrollOpacity("greetingText",scrollPoint,400);
+                scrollOpacity("businessTitle",scrollPoint,1400);
+                scrollOpacity("business",scrollPoint,1900);
+                scrollOpacity("prodDesc",scrollPoint,3200);
+                scrollOpacity("engContact",scrollPoint,4400);
+                scrollOpacity("contactUs",scrollPoint,4400);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- container -->
+    <div id="container">
+        
+        <!-- navBar -->
+        <nav class="navBar">
+
+            <!-- 로고 + 회사명 클릭 시 메인화면 이동  -->
+            <div class='nav_left' id='nav_left'>
+                <div onclick='moveTo("nav_left")'>
+                    <img style="width:250px;" src="./media/mainLogo.png">
+                </div>
+            </div>
+            
+            <ul class="nav_center">                
+                <li onclick='moveTo("ourCompany")'>Our Company</a></li>
+                <li onclick='moveTo("ourBusiness")'>Our Business</a></li>
+                <li onclick='moveTo("product")'>Product</a></li>
+                <li onclick='moveTo("engContact")'>Contact Us</a></li>
+               
+            </ul>
+            
+            <div class="nav_short">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <!-- MainContent -->
+        <div id='mainContent'>
+            <div id="index">
+                <div class="jb-box">
+                    <video muted autoplay loop>
+                    <source src="./media/business1.mp4" type="video/mp4">
+                    <strong>Your browser does not support the video tag.</strong>
+                    </video>
+                    <div class="jb-text">
+                    <p style="font-size: 20px;">최고의 결제비지니스 파트너,</p>
+                    <p>One The PartnerShip</p>
+                    </div>
+                </div>
+                
+                <!-- <div id="btnDiv">
+                        <div>
+                            <p>Mobile App</p>
+                        </div>
+                        <button id="andBtn">
+                            <i class="fab fa-android" style="font-size:30px;"></i><br>
+                            <span style="font-size:20px; font-weight: bold; margin-left:10px;"> <i class="fas fa-download"></i>  Google</span>
+                        </button>
+                        <button id="appleBtn">
+                            <i class="fab fa-apple"  style="font-size:30px;"></i><br>
+                            <span style="font-size:20px; font-weight: bold; margin-left:10px;"> <i class="fas fa-download"></i>  Apple</span>
+                        </button>
+                        
+                </div> -->
+             </div>
+
+            <div id="ourCompany">
+                    <div id="greeting1">
+                        <div>
+                            <video muted autoplay loop>
+                                <source src="./media/BlueSkyVideo.mp4" type="video/mp4">
+                                <strong>Your browser does not support the video tag.</strong>
+                            </video>
+                        </div>
+                            <div class="greetingText">
+                                <h1>안녕하세요,</h1>
+                                <h1>원더파트너십입니다!</h1>
+                                    <div id="greetingText_mobile">
+                                        <h3>최고의 비지니스 파트너가 되길 희망합니다!</h3>
+                                        <h3>저희에게 무엇보다도 가장 중요한 것은</h3> 
+                                        <h3>고객님이 가진 저희에 대한 <strong style="font-size: 30px;">신뢰</strong>입니다.</h3>
+                                        <h3>이를 위해 회사에서 지속적인 약속이행과</h3>
+                                        <h3>함께 꼼꼼한 관리를 성실하게 해주는 것이</h3>
+                                        <h3>저희 원더파트너십의 원칙이자 이념입니다.</h3>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+            
+            <div id="ourBusiness">
+                <div id="businessTitle">
+                    <div class=engStyle>What is</div>
+                    <h1 style="color:#1cb2bd;">전자결제서비스란?</h1>
+                    
+                    <p>전자결제대행업체인 pg는 업체(가맹점)를 대신해 카드사 등 기타 결제기관들과 
+                    대표 가맹점 계약을 맺고 신용카드의 결제 및 지불을 대행하는 서비스입니다.
+                    <p>업체(가맹점)를 대신해 결제기관으로부터 물품금액을 수금한 후 금액을 업체(가맹점)에 지급합니다.</p>
+                    <div>
+
+                </div>
+                </div>
+
+                <div id="business">
+                    <div class=engStyle>Why is</div>
+                    <h1 style="color:#1cb2bd;">전자결제서비스 왜 좋은가?</h1>
+                   
+                   <div class="meriteImage">
+                       <table>
+                           <tr>
+                               <td colspan="2">
+                                <p class=engStyleSmall>Accuracy</p>
+                                   <div id="tdBox">정확성</div>
+                               </td>
+                           </tr>
+                           <tr>
+                            <td>
+                                <p class=engStyleSmall>Convenience</p>
+                                <div id="tdBox">편리성</div>
+                            </td>
+                            <td>
+                                <p class=engStyleSmall>Persistence</p>
+                                <div id="tdBox">지속성</div>
+                            </td>
+                            </tr>
+                       </table>
+                       <div id="meriteDesc">
+                           <div id="manDesc">
+                                <h2>손쉬운 매출확인</h2>
+                                <p>한눈에 들어오는 매출 확인이 너무 편해요!</p>
+                                <img src="media/franchise.png">
+                               
+                           </div>
+                           <div id="womanDesc">
+                            <h2>익일정산</h2>
+                            <p>"당일매출을 익일정산으로 받아보니 빠르게 현금이 유동되어 좋아요!"</p>
+                            <img src="media/freelance.png">
+                           
+                       </div>
+                       </div>
+                   </div>
+                  
+                </div>
+             </div>
+            
+          
+            <div id="product">
+                <div id="prodDesc"  style="border:none;">
+                    <div class=engStyle>This is</div>
+                    <h1 style="color:#1cb2bd;">스마트한 결제시스템!</h1>
+                    <img src="./media/kcp_p3000.jpg">
+                    
+                    <div id="prodDetail">
+                        <h1 style="color:#2c2b2c">스마트 결제시스템 </h1>
+                        <p id="prodDescText1"><i class="far fa-check-square" style="color:darkblue"></i> 각종 세금 신고는 <span class="highlight">자유롭게"</span></p>
+                        <p id="prodDescText1"><i class="far fa-check-square" style="color:darkblue"></i> 간편한 "무선휴대용" 단말기로 <span class="highlight">"용이하게"</span></p>
+                        <p id="prodDescText1"><i class="far fa-check-square" style="color:darkblue"></i> 전국 신용카드 사용자가 <span class="highlight">"100%"</span></p>
+                        <p id="prodDescText1"><i class="far fa-check-square" style="color:darkblue"></i> <span class="highlight">"카드 안 되요"</span> 이런말은 이제 그만!</p>
+                    </div>
+                    
+                    </div>
+                </div>
+
+            <h1 class="engStyle" id="engContact">We Are Here</h1>
+            <div id="contactUs">
+                <div id="contactText">
+                    <table>
+                        <tr>
+                            <th>E-mail 문의</th>
+                        </tr>
+                        <tr>
+                            <td>otp3721@naver.com</td>
+                        </tr>
+                        <tr>
+                            <th>전화 문의</th>
+                        </tr>
+                        <tr>
+                            <td>1533-2911</td>
+                        </tr>
+                        <tr>
+                            <th>사업자 위치</th>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">인천광역시 미추홀구 인주대로23번길 3, 402호(숭의동)<br>(수인·분당선 숭의역 4번 출구 도보 5분)</td>
+                        
+                        </tr>
+                    </table>
+                </div>
+                <div id="map">
+                    <!-- GoogleMap API -->
+                 </div>
+            </div>
+       
+            
+        </div>
+        </div>
+    </div>
+
+    </div>
+    <div id="stickyZone">
+        <!-- stickyBtn -->
+        <div class="chatDesc">
+            <img id="kakaoChatBtn" class="stickBtn" src="icon/kakaotalk_logo_icon_147272.ico">
+            <span> KAKAO 상담</span>
+        </div>
+        <button id="topBtn" class="stickBtn"> <i class="fas fa-sort-up"></i><br>Top </button>
+    </div>
+    <!-- Footer -->
+    <nav id="footer">
+        <div id="companyLogos">
+            <img src="media/mainLogo.png" style="width:250px">
+        </div>
+        <div id="companyInfo">
+            <p>주식회사 원더파트너십(ONE THE PARTNERSHIP) | 대표자 : 이은철 <p>
+            <p>사업자등록번호 : 250-86-02515</p>    
+            <p>사업장 소재지 : 인천광역시 미추홀구 인주대로23번길 3, 402호(숭의동)</p>
+            <p>2021 One The PartnerShip Inc. All Right Reserved.</p>
+        </div>
+      
+    </nav>
+    <script>
+        let map;
+        function initMap() {
+        let wonderPlace ={ lat: 37.46036557898945, lng: 126.64081377530556 };
+    
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: wonderPlace,
+            zoom: 17,
+        });
+        const marker = new google.maps.Marker({
+            position: wonderPlace,
+            map: map,
+        })
+        }
+    </script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQaLxJAw66qqJ_KGMtmc1_Ldf0EO7SxyI&callback=initMap">
+    </script>
+    
+</body>
+</html>

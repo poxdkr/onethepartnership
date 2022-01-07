@@ -1,0 +1,14 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "nodeserverTest",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error : no test secified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "nodeserver": "^0.9.1"
+  }
+}
